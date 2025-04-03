@@ -1,14 +1,21 @@
 from PIL import Image
 import numpy as np
 
-# Open and resize the image to the required size (e.g., 64x64)
-img = Image.open("DT (12).jpg").resize((64, 64))
-img = img.convert("RGB")  # ensure it has 3 channels
-img_array = np.array(img).astype(np.float32)  # convert to float32 if needed
-img_array = img_array.transpose(2, 0, 1)  # change from HxWxC to CxHxW
+# Open the image, resize it to the desired dimensions (e.g., 2048x2048)
+img = Image.open("DT.jpeg").resize((1024, 1024))
 
-# Optionally normalize pixel values, e.g., to [0,1]
-img_array /= 255.0
+# Convert the image to grayscale (L mode means 1 channel)
+img = img.convert("L")
 
-# Save the raw pixel values to a binary file
-img_array.tofile("DT (12).bin")
+# Convert the image to a NumPy array of type float32
+img_array = np.array(img).astype(np.float32)
+
+# Optionally, normalize pixel values to [0,1] if desired (uncomment the next line)
+# img_array /= 255.0
+
+# Expand dimensions to have shape (1, H, W) if needed by your model
+img_array = np.expand_dims(img_array, axis=0)  # Now shape is (1, 2048, 2048)
+
+# Save the array as a binary file
+img_array.tofile("DT_Test_gray.bin")
+print("Saved grayscale .bin file with shape:", img_array.shape)
