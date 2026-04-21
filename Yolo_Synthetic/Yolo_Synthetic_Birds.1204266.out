@@ -1,0 +1,350 @@
+==========================================
+SLURM_CLUSTER_NAME = param-shivay
+SLURM_ARRAY_JOB_ID = 
+SLURM_ARRAY_TASK_ID = 
+SLURM_ARRAY_TASK_COUNT = 
+SLURM_ARRAY_TASK_MAX = 
+SLURM_ARRAY_TASK_MIN = 
+SLURM_JOB_ACCOUNT = electronics_engg
+SLURM_JOB_ID = 1204266
+SLURM_JOB_NAME = Yolo-Synthetic-Birds
+SLURM_JOB_NODELIST = gpu006
+SLURM_JOB_USER = deepaprakash.ece22.itbhu
+SLURM_JOB_UID = 6390
+SLURM_JOB_PARTITION = gpu
+SLURM_TASK_PID = 74041
+SLURM_SUBMIT_DIR = /scratch/deepaprakash.ece22.itbhu
+SLURM_CPUS_ON_NODE = 40
+SLURM_NTASKS = 
+SLURM_TASK_PID = 74041
+==========================================
+Pairing videos with annotations from ALL datasets...
+Processing dataset: REAL_WOSDETC...
+Processing dataset: SYNTHETIC_BIRDS...
+Total combined videos/sequences ready: 97
+Extracting video-level labels for stratified splitting...
+Data split: 82 train videos, 15 validation videos (Stratified).
+Calculating exact class weights from the Training split...
+Train Set Stats: 81316 DRONE frames, 76071 NO-DRONE frames.
+Calculated pos_weight for loss: 0.94
+
+Creating Training Dataset...
+Aggregating all frame indices (up to 400000 total)...
+Dataset size (sampled frames): 157387
+
+Creating Validation Dataset...
+Aggregating all frame indices (up to 60000 total)...
+Dataset size (sampled frames): 29189
+PoT Quantized Patch-based classifier model initialized on: cuda
+Starting ROBUST training on 157387 samples for 20 epochs...
+Validating on 29189 samples.
+Best model will be saved to: /scratch/deepaprakash.ece22.itbhu/yolo_kria_qat_synth.pth
+Initializing Focal Loss with Alpha=0.48, Gamma=2.0
+Starting TRAINING on 157387 samples for 20 epochs...
+Validating on 29189 samples.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=71671 | FP=4400 | FN=52948 | TP=28368
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12912 | FP=1107 | FN=3982 | TP=11188
+  Stats:  Loss: 0.1163 | F1: 0.8147 | Prec: 0.9100 | Rec: 0.7375
+  ---> New best PoT model saved! (F1: 0.8147)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=73143 | FP=2928 | FN=41444 | TP=39872
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13533 | FP=486 | FN=9526 | TP=5644
+  Stats:  Loss: 0.1043 | F1: 0.5300 | Prec: 0.9207 | Rec: 0.3721
+  (Best F1 remains: 0.8147)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=73467 | FP=2604 | FN=35631 | TP=45685
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13111 | FP=908 | FN=6141 | TP=9029
+  Stats:  Loss: 0.0424 | F1: 0.7192 | Prec: 0.9086 | Rec: 0.5952
+  (Best F1 remains: 0.8147)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=73533 | FP=2538 | FN=32581 | TP=48735
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12997 | FP=1022 | FN=7661 | TP=7509
+  Stats:  Loss: 0.0625 | F1: 0.6336 | Prec: 0.8802 | Rec: 0.4950
+  (Best F1 remains: 0.8147)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=73697 | FP=2374 | FN=28739 | TP=52577
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13004 | FP=1015 | FN=7046 | TP=8124
+  Stats:  Loss: 0.0735 | F1: 0.6684 | Prec: 0.8889 | Rec: 0.5355
+  (Best F1 remains: 0.8147)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=73784 | FP=2287 | FN=25472 | TP=55844
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12603 | FP=1416 | FN=2057 | TP=13113
+  Stats:  Loss: 0.0679 | F1: 0.8831 | Prec: 0.9025 | Rec: 0.8644
+  ---> New best PoT model saved! (F1: 0.8831)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74037 | FP=2034 | FN=22745 | TP=58571
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=11265 | FP=2754 | FN=3321 | TP=11849
+  Stats:  Loss: 0.1161 | F1: 0.7960 | Prec: 0.8114 | Rec: 0.7811
+  (Best F1 remains: 0.8831)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74228 | FP=1843 | FN=21422 | TP=59894
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13239 | FP=780 | FN=6334 | TP=8836
+  Stats:  Loss: 0.0550 | F1: 0.7130 | Prec: 0.9189 | Rec: 0.5825
+  (Best F1 remains: 0.8831)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74388 | FP=1683 | FN=20405 | TP=60911
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12317 | FP=1702 | FN=1267 | TP=13903
+  Stats:  Loss: 0.1067 | F1: 0.9035 | Prec: 0.8909 | Rec: 0.9165
+  ---> New best PoT model saved! (F1: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74426 | FP=1645 | FN=19449 | TP=61867
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13799 | FP=220 | FN=13843 | TP=1327
+  Stats:  Loss: 0.0649 | F1: 0.1588 | Prec: 0.8578 | Rec: 0.0875
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74529 | FP=1542 | FN=17882 | TP=63434
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13060 | FP=959 | FN=5785 | TP=9385
+  Stats:  Loss: 0.0618 | F1: 0.7357 | Prec: 0.9073 | Rec: 0.6187
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74641 | FP=1430 | FN=16233 | TP=65083
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12990 | FP=1029 | FN=4342 | TP=10828
+  Stats:  Loss: 0.0581 | F1: 0.8013 | Prec: 0.9132 | Rec: 0.7138
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74722 | FP=1349 | FN=15277 | TP=66039
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=13289 | FP=730 | FN=7632 | TP=7538
+  Stats:  Loss: 0.0491 | F1: 0.6432 | Prec: 0.9117 | Rec: 0.4969
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74720 | FP=1351 | FN=15035 | TP=66281
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=4999 | FP=9020 | FN=881 | TP=14289
+  Stats:  Loss: 0.6360 | F1: 0.7427 | Prec: 0.6130 | Rec: 0.9419
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74777 | FP=1294 | FN=14060 | TP=67256
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12672 | FP=1347 | FN=4528 | TP=10642
+  Stats:  Loss: 0.0774 | F1: 0.7837 | Prec: 0.8876 | Rec: 0.7015
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74834 | FP=1237 | FN=13390 | TP=67926
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12760 | FP=1259 | FN=5206 | TP=9964
+  Stats:  Loss: 0.0848 | F1: 0.7550 | Prec: 0.8878 | Rec: 0.6568
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74878 | FP=1193 | FN=12918 | TP=68398
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12313 | FP=1706 | FN=4021 | TP=11149
+  Stats:  Loss: 0.0872 | F1: 0.7956 | Prec: 0.8673 | Rec: 0.7349
+  (Best F1 remains: 0.9035)
+
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001166.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000497.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_06_10_to_00_06_27/frame_00000498.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000925.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001412.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000176.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_10_09_to_00_10_40/frame_00000924.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_09_30_to_00_10_09/frame_00001165.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/00_01_52_to_00_01_58/frame_00000175.jpg. Returning zero image.
+Warning: could not read /scratch/deepaprakash.ece22.itbhu/birdvdrone/wosdetc_train_frames/2019_10_16_C0003_3633_inspire/frame_00001411.jpg. Returning zero image.
+
+  [Train] CM (Thresh=0.5): TN=74937 | FP=1134 | FN=12231 | TP=69085
+  [Val PoT] Best Thresh: 0.50
+  [Val PoT] CM: TN=12580 | FP=1439 | FN=3481 | TP=11689
+  Stats:  Loss: 0.0825 | F1: 0.8261 | Prec: 0.8904 | Rec: 0.7705
+  (Best F1 remains: 0.9035)
+
